@@ -1,0 +1,72 @@
+<div id="modal" class="modal fade">
+  <div class="modal-dialog">
+    <div class="modal-content">
+            <div class="modal-header">
+                <h3>Photo-masking tutorial for 3D modelling </h3>
+            </div>
+            <div id="1" class="modal-body" style="display:none">
+                <p> 
+                Come usare la barra degli strumenti relativa all'applicazione di photo-masking:
+                </p>
+                <img src="http://micropasts.org/wp-content/uploads/2014/11/Photomasking_Toolbar.png" width="100%" alt="Photo-masking Toolbar" />
+                <p>
+                <p><strong>Outline</strong>: Questa opzione e' selezionata di default e indica che le azioni che seguiranno sono relative alla realizzazione di un poligono lungo il contorno dell'oggetto.</p>
+                <p><strong>Holes</strong>: Questa opzione solitamente non e' disponibile, ma apparira' ogni qual volta l'oggetto di cui si vuole marcare il contorno abbia dei 'buchi', come nel caso di un braccialetto. In questi casi lo sfondo deve essere escluso anche all'interno del 'buco' stesso. Clicca su 'Holes' prima di cominciare a disegnare o modificare un buco allinterno dell'oggetto.</p>
+                <p><strong>Draw</strong>: Questa opzione e' selezionata di default, all'inizio di ogni task. Clicca su 'Draw' ogni volta che vuoi cominciare a tracciare il contorno di un oggetto. Una volta completato il poligono di contorno, la linea blu che lo delinea diventera' gialla.</p>
+                <p><strong>Edit</strong>: Questa opzione diventa disponibile quando almeno un poligono e' stato completato. Dopo aver cliccato su 'Edit', scegli il poligono che desideri modificare cliccando una volta a qualsiasi punto del poligono. La linea del poligono tornera' blu e potra' essere modificata. </p>
+                <p><strong>Remove all polygons</strong>: Utilizza questa opzione se desideri ricominciare da capo. Cliccando su questa opzione rimuoverai tutti i poligoni precedentemente tracciati.</p>
+                <p> <strong>Save the drawings</strong>: Clicca su questa opzione quando una volta completato il photo-masking dell'oggetto - salvera' il tuo lavoro come completato.</p>
+                </p>
+                
+            </div>    
+
+            <div id="2" class="modal-body" style="display:none">  
+                <p>
+                During the task, you can always return to this tutorial via the "Tutorial" button.
+                </p>
+                <p>
+
+                Un esempio di <a href="http://micropasts.org/3D">modello 3D</a> completato.    
+                </p>
+                <p>
+                Per saperne di piu' sul progetto, per porre domande, suggerire modifiche o fornire nuove idee e spunti, ti invitiamo a registrarti sul nostro <a href="http://community.micropasts.org" title="Community forum">community forum</a>.
+                </p>
+            </div>
+
+            <div class="modal-footer">
+                <a id="prevBtn" href="#" onclick="showStep('prev')" class="btn btn-default">Previous</a>
+                <a id="nextBtn" href="#" onclick="showStep('next')" class="btn btn-success">Next</a>
+                <a id="startContrib" href="../ethiopia/newtask" class="btn btn-primary" style="display:none"><i class="glyphicon glyphicon-thumbs-up"></i> Start!</a>
+            </div>
+      </div>
+</div>
+</div>
+
+
+<script>
+    var step = -1;
+    function showStep(action) {
+        $("#" + step).hide();
+        if (action == 'next') {
+            step = step + 1;
+        }
+        if (action == 'prev') {
+            step = step - 1;
+        }
+        if (step == 0) {
+            $("#prevBtn").hide();
+        }
+        else {
+            $("#prevBtn").show();
+        }
+
+        if (step == 2) {
+            $("#nextBtn").hide();
+            $("#startContrib").show();
+        }
+        $("#" + step).show();
+    }
+
+    showStep('next');
+    $("#modal").modal('show');
+</script>
